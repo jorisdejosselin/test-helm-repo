@@ -15,7 +15,7 @@ A Helm chart for Kubernetes
 | resources.limits.cpu | string | `"100m"` |  |
 | resources.limits.memory | string | `"128Mi"` |  |
 | resources.requests.cpu | string | `"100m"` |  |
-| resources.requests.memory | string | `"128Mi"` |  |
+| resources.requests.memory | string | `"128Mi# Test change"` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
 
