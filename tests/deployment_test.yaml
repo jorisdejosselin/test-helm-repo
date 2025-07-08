@@ -1,0 +1,14 @@
+suite: test deployment
+templates:
+  - deployment.yaml
+tests:
+  - it: should render deployment correctly
+    asserts:
+      - isKind:
+          of: Deployment
+      - equal:
+          path: metadata.name
+          value: RELEASE-NAME-my-app
+      - equal:
+          path: spec.replicas
+          value: 1

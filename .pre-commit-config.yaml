@@ -1,0 +1,58 @@
+repos:
+  - repo: local
+    hooks:
+      - id: helm-lint
+        name: Helm Lint
+        entry: ../hooks/helm-lint.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|templates/.*\.yaml)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-template
+        name: Helm Template
+        entry: ../hooks/helm-template.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|templates/.*\.yaml)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-dependency-update
+        name: Helm Dependency Update
+        entry: ../hooks/helm-dependency-update.sh
+        language: script
+        files: ^.*/(Chart\.yaml|Chart\.lock)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-docs
+        name: Helm Docs
+        entry: ../hooks/helm-docs.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|README\.md)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-kubeval
+        name: Helm Kubeval
+        entry: ../hooks/helm-kubeval.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|templates/.*\.yaml)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-security
+        name: Helm Security
+        entry: ../hooks/helm-security.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|templates/.*\.yaml)$
+        pass_filenames: false
+        always_run: true
+        
+      - id: helm-unittest
+        name: Helm Unit Test
+        entry: ../hooks/helm-unittest.sh
+        language: script
+        files: ^.*/(Chart\.yaml|values\.yaml|templates/.*\.yaml|tests/.*\.yaml)$
+        pass_filenames: false
+        always_run: true
