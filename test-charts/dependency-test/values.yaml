@@ -1,0 +1,16 @@
+replicaCount: 1
+image:
+  repository: nginx
+  tag: "1.21"
+  pullPolicy: IfNotPresent
+
+redis:
+  enabled: true
+  auth:
+    enabled: false
+
+postgresql:
+  enabled: true
+  auth:
+    database: myapp
+    username: myuser

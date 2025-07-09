@@ -1,0 +1,5 @@
+replicaCount: 2
+image:
+  repository: apache
+  tag: "2.4"
+  pullPolicy: Always

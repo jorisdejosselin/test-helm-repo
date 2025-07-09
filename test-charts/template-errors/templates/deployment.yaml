@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "template-errors.fullname" . }}
+  # This helper function doesn't exist - will cause template error
+  labels:
+    {{- include "template-errors.nonexistent" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "template-errors.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "template-errors.name" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        # This will cause a template error - undefined variable
+        env:
+        - name: TEST
+          value: "{{ .Values.nonexistent.value }}"

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: lint-failures
+description: A test chart with linting issues
+version: 
+appVersion: "1.0"
+# Missing required fields and bad formatting

@@ -1,0 +1,12 @@
+apiVersion: v2
+name: good-practices
+description: A well-structured Helm chart following best practices
+type: application
+version: 0.1.0
+appVersion: "1.0"
+home: https://example.com
+sources:
+  - https://github.com/example/good-practices
+maintainers:
+  - name: Test Maintainer
+    email: test@example.com

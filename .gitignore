@@ -1,0 +1,23 @@
+# Helm dependency files
+Chart.lock
+charts/*.tgz
+
+# Test artifacts
+__snapshot__/
+*.orig
+*.bak
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.cache

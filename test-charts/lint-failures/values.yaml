@@ -1,0 +1,6 @@
+# Missing required values
+replicaCount: 
+image:
+  repository: 
+  tag: 
+  pullPolicy: 
